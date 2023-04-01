@@ -41,7 +41,6 @@ A (7,-5, 0); B (1,-1,9) -> 11.53
 
 РЕШЕНИЕ:
 -------------------
-*/
 
 Console.WriteLine("Задайте координату X1 первой точки: ");
 int x1 = int.Parse(Console.ReadLine());
@@ -68,19 +67,22 @@ int C = z1 - z2;
 double length = Math.Sqrt(A * A + B * B + C * C);
 Console.WriteLine($"Расстояние между точками в 3D пространстве составляет -> {length}");
 
-/*
+------------------------
 
 Задача 23
 Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
 3 -> 1, 8, 27
 5 -> 1, 8, 27, 64, 125
 
+РЕШЕНИЕ 
+--------------------
+*/
 
-int number = ReadInt("Введите число N: ");
+int number = ReadInt("Введите число и я выдам перечень кубов от 1 до этого числа: ");
 
 for (int i = 1; i <= number; i++)
 { 
-    Console.Write($"{i*i*i} ");
+    Console.Write($" {i*i*i} ");
 }
 
 int ReadInt(string message)
@@ -88,4 +90,3 @@ int ReadInt(string message)
     Console.Write(message);
     return Convert.ToInt32(Console.ReadLine());
 }
-*/
