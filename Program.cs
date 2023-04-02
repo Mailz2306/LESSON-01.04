@@ -126,5 +126,25 @@ int GetLengthNumber(int number)
 
 ГОТОВО 
 
-*/ 
+ 
 
+ЗАДАЧА - Напишите программу, которая принимает число А и выдает 
+сумму числе от 1 до А. 
+
+*/
+
+int a = int.Parse(Console.ReadLine());
+
+int sum = GetSumToNumber(a);
+Console.WriteLine(sum);
+
+int GetSumToNumber(int number)
+{
+    int sum = 0;
+
+    for (int i = 1; i < number; i++)
+    {
+        sum += i;
+    }
+    return sum;
+}
