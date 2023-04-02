@@ -131,8 +131,6 @@ int GetLengthNumber(int number)
 ЗАДАЧА - Напишите программу, которая принимает число А и выдает 
 сумму числе от 1 до А. 
 
-*/
-
 int a = int.Parse(Console.ReadLine());
 
 int sum = GetSumToNumber(a);
@@ -147,4 +145,82 @@ int GetSumToNumber(int number)
         sum += i;
     }
     return sum;
+}
+----------------------- 
+Задача 28: Напишите программу, которая принимает на вход число N и выдаёт произведение чисел от 1 до N.
+4 -> 24 5 -> 120
+
+ЗАДАЧА 28 
+---------------- 
+
+Console.WriteLine("Введите число и я покажу произведение от 1 до этого числа: ");
+int a = int.Parse(Console.ReadLine()); 
+
+int f = Factorial(a);
+Console.WriteLine($"{a} -> {f}");
+
+int Factorial(int a)
+{
+    int factorial = 1; 
+
+    for (int i = 1; i <= a; i++)
+    {
+        factorial = factorial * i;
+    }
+    return factorial;
+}
+ 
+ЗАДАЧА 30: 
+Задача 30: Напишите программу, которая выводит массив из 8 элементов, заполненный нулями и единицами в случайном порядке.
+[1,0,1,1,0,1,0,0]
+_____________________________
+
+Console.WriteLine("Введите длину массива");
+int size = int.Parse(Console.ReadLine());
+Console.WriteLine("Введите минимальное значение");
+int min = int.Parse(Console.ReadLine());
+Console.WriteLine("Введите максимальное значение");
+int max = int.Parse(Console.ReadLine());
+
+int[] array = RandomArray(size, min, max); 
+PrintArray(array);
+int[] RandomArray(int size, int min, int max)
+{
+    int[] array = new int[size];
+
+    Random rand = new Random();
+
+    for (int i = 0; i < array.Length; i++)
+        array[i] = rand.Next(min,max);
+    
+    return array;
+} 
+void PrintArray(int[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.WriteLine(array[i]);
+    }
+}
+
+ДОМАШНЕЕ ЗАДАНИЕ 
+
+*/ 
+Console.WriteLine("Введите число A: ");
+int a = int.Parse(Console.ReadLine());
+
+Console.WriteLine("Введите число B: ");
+int b = int.Parse(Console.ReadLine());
+
+int c = 1;
+if (b<1)
+Console.WriteLine("Число B должно быть натуральным\n");
+else
+{
+while (b!=0)
+{
+c = c * a;
+b = b — 1;
+}
+Console.Write($"Число A в натуральной степени B равно {c}");
 }
