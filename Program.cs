@@ -76,7 +76,7 @@ Console.WriteLine($"Расстояние между точками в 3D про�
 
 РЕШЕНИЕ 
 --------------------
-*/
+
 
 int number = ReadInt("Введите число и я выдам перечень кубов от 1 до этого числа: ");
 
@@ -90,3 +90,41 @@ int ReadInt(string message)
     Console.Write(message);
     return Convert.ToInt32(Console.ReadLine());
 }
+
+--------------------------------------- 
+СЕМИНАР от 02.04.2023 
+
+ЗАДАЧА - написать программу, которая показывает какой длины массив 
+
+
+int number = int.Parse(Console.ReadLine());
+Console.WriteLine(GetLengthNumber(number));
+
+int[] ConvertToArray(int number)
+{
+    int length = GetLengthNumber(number); 
+    int [] result = new int[length]; 
+
+    for (int i = 0; i < length; i++)
+    {
+        result[i] = number * 10;
+        number = number / 10;
+    }
+}
+
+int GetLengthNumber(int number)
+{
+    int length = 0; 
+
+    while (number != 0)
+    {
+        number = number / 10;
+        length++;
+    }
+    return length;
+}
+
+ГОТОВО 
+
+*/ 
+
